@@ -18,6 +18,18 @@ io.on('connection', socket => {
     io.sockets.emit('message', msg);
   });
 
+  socket.on('html', (content) => {
+    io.sockets.emit('html', content);
+  });
+
+  socket.on('lyric', (song) => {
+    io.sockets.emit('lyric', song);
+  });
+
+  socket.on('lyric-index', (index) => {
+    io.sockets.emit('lyric-index', index);
+  });
+
   socket.on('disconnect', () => {
     console.log('User disconnected');
   });
