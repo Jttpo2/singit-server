@@ -6,6 +6,8 @@ const PORT = 4001;
 
 const app = express();
 
+app.use((req, res) => res.send('Test'));
+
 const server = http.createServer(app);
 
 const io = socketIo(server);
