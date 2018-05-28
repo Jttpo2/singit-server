@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 
-const PORT = 4001;
+const PORT = process.env.PORT || 4001;
 
 const app = express();
 
@@ -37,6 +37,6 @@ io.on('connection', socket => {
   });
 });
 
-server.listen(process.env.PORT | PORT, () => {
+server.listen(PORT, () => {
   console.log(`Listening on port ${process.env.PORT | PORT}`);
 });
